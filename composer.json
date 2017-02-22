@@ -1,0 +1,13 @@
+{
+  "name": "PHP - POO",
+  "description": "Projeto de estudo de POO com PHP",
+  "autoload": {
+    "psr-4": {
+      "Source\\": "src/Source"
+    }
+  },
+  "require": {
+    "php": ">=5.2.8",
+    "pimple/pimple": "~3.0"
+  }
+}

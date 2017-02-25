@@ -2,18 +2,46 @@
 
 namespace Source;
 
-class Produto
+class Produto implements iProduto
 {
-    private $db;
-    public function __construct(IConn $db)
+    private $id;
+    private $nome;
+
+    public function __construct()
     {
-        $this->db = $db->connect();
+
     }
-    public function lista()
+
+    /**
+     * @return mixed
+     */
+    public function getNome()
     {
-        $query = "Select * from produtos";
-        $stmt = $this->db->prepare($query);
-        $stmt->execute();
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $this->nome;
+    }
+
+    /**
+     * @param mixed $nome
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        $this->id;
+        return $this;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 }
